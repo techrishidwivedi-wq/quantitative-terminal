@@ -5,5 +5,5 @@ plotly
 yfinance
 scipy
 xlsxwriter
-matlplotlib
+matplotlib
 textblob
