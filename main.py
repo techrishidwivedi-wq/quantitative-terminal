@@ -15,7 +15,6 @@ from models import (
     NewsEngine,         
     FinancialVizEngine  
 )
-from utils import TechnicalAnalysis
 from data_engine import fetch_market_data, get_fundamental_df
 
 st.set_page_config(**PAGE_CONFIG)
