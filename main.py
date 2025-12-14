@@ -86,13 +86,13 @@ def main():
             score, sent_df = SentimentEngine.analyze_news(market_data[active_ticker]['news'])
             
             if score > 0.05:
-                score_color = "#4caf50" # Green
+                score_color = "#4caf50"
                 status_text = "↑ Bullish"
             elif score < -0.05:
-                score_color = "#ef5350" # Red
+                score_color = "#ef5350"
                 status_text = "↓ Bearish"
             else:
-                score_color = "#ff9800" # Orange
+                score_color = "#ff9800"
                 status_text = "— Neutral"
 
             st.markdown(f"""
@@ -257,7 +257,7 @@ def main():
     with tabs[1]:
         st.subheader(f"Deep-Dive Financials: {active_ticker}")
         ticker_obj = yf.Ticker(active_ticker)
-        perf_df, waterfall, debt_df, earn_df = FinancialVizEngine.process_financials(ticker_obj)
+        perf_df, waterfall, debt_df = FinancialVizEngine.process_financials(ticker_obj)
         
         if not perf_df.empty:
             c1, c2 = st.columns(2)
