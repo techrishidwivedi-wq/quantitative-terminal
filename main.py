@@ -257,7 +257,7 @@ def main():
     with tabs[1]:
         st.subheader(f"Deep-Dive Financials: {active_ticker}")
         ticker_obj = yf.Ticker(active_ticker)
-        perf_df, waterfall, debt_df = FinancialVizEngine.process_financials(ticker_obj)
+        perf_df, waterfall, debt_df, earnings_data = FinancialVizEngine.process_financials(ticker_obj)
         
         if not perf_df.empty:
             c1, c2 = st.columns(2)
