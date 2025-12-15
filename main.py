@@ -1284,7 +1284,7 @@ def main():
 
 <div class="footer">
     <div class="footer-main">
-        Made with <span style="color: #ff1744;">&hearts;</span> by <b>Rishi</b>
+        Made with <span style="color: #ff1744;">&hearts;</span>
     </div>
     <div class="footer-links">
         <a href="mailto:rishi_ipm25@iift.edu">📩 Contact Me</a>
