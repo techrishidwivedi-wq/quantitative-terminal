@@ -32,7 +32,7 @@ def main():
             news_api_key = ""
 
         user_tickers = st.text_area("Tickers", "AAPL, MSFT, GOOGL, AMZN, TSLA", height=68)
-        tickers_clean = [x.strip().upper() for x in user_tickers.split(',') if x.strip()]
+        tickers_clean = [x.strip().upper() for x in user_tickers.replace(',', ' ').split() if x.strip()]
         
         if st.button("Reload Market Data"): 
             st.cache_data.clear()
