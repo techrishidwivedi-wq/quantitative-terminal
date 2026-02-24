@@ -11,10 +11,16 @@ NEWS_ENDPOINT = "https://newsapi.org/v2/everything"
 def fetch_market_data(tickers_list, news_api_key=None):
     data_dict = {}
     valid_tickers = []
-    
+
     def fetch_single(ticker_sym):
         try:
-            ticker_obj = yf.Ticker(ticker_sym)
+            session = requests.Session()
+            session.headers.update({
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36'
+            })
+            
+            ticker_obj = yf.Ticker(ticker_sym, session=session)
+
             hist = ticker_obj.history(period="max")
             info = ticker_obj.info
             
